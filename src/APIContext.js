@@ -10,6 +10,7 @@ export const APIContextProvider = ({ children }) => {
 
   const handlePostRequest=async()=>{
     let formdata = new FormData()
+    console.log(image)
     formdata.append("image",image)
     formdata.append("name","ImageFromOtherSide")
     console.log("before stringfy: ", lesionParameters)
@@ -32,7 +33,7 @@ export const APIContextProvider = ({ children }) => {
   return (
     <APIContext.Provider
       value={{
-        result,
+        result,setResult,
         handlePostRequest
       }}
     >

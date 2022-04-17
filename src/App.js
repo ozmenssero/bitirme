@@ -2,18 +2,18 @@ import logo from './logo.svg';
 import './App.css';
 import HomePage from './components/HomePage';
 import Canvas from './components/Canvas';
+
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import  Navbar  from './components/Navbar';
 function App() {
   return (
-    <div className="App">
-      {/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edisat <code>src/App.js</code> and save to reload.
-        </p>
-      </header> */}
-      <HomePage/>
-      {/* <Canvas /> */}
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<HomePage/>} />
+      </Routes>  
+    </Router>
   );
 }
 
